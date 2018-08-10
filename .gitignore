@@ -26,3 +26,7 @@
 *.exe
 *.out
 *.app
+
+# Pythonic and Pycharm IDE
+*.pyc
+./idea

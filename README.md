@@ -16,15 +16,19 @@ aras_visual_servo_controller
 aras_visual_servo_gazebo
 
 ---------------
-How to run th code:
+### How to run the code:
 
+```bash
 roslaunch aras_visual_servo_gazebo aras_visual_servo_gazebo.launch
-
 roslaunch aras_visual_servo_gazebo aras_visual_servo_controller.launch
-
 rosrun aras_visual_servo_camera aras_visual_servo_camera_node
+rosrun aras_visual_servo_controller aras_visual_servo_controller_node
+```
+### For moving the arm with arrow keys run the following line:
 
-rosrun aras_visual_servo_controller aras_visual_servo_controller_node 
+```bash
+rosrun aras_teleop mover.py
+```
 
 AUTHORS
 ---------------
@@ -34,7 +38,7 @@ Javad Ramezanzadeh <br>
 Parisa Masnadi <br>
 Ebrahim Abedloo <br>
 Hamid D Taghirad (supervisor) <br>
-
+Benyamin Jafari (Forked this repo)
 
 
 
