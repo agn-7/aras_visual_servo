@@ -11,16 +11,16 @@ OVERVIEW
 
 The main packages are:
 
-aras_visual_servo_camera
+ - aras_visual_servo_camera
 
-aras_visual_servo_controller
+ - aras_visual_servo_controller
 
-aras_visual_servo_gazebo
+ - aras_visual_servo_gazebo
 
-tcd _tools
+ - aras_teleop
 
 ---------------
-How to run the code:
+How to run the project:
 ---------------
 
 ```bash
