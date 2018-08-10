@@ -16,7 +16,7 @@ aras_visual_servo_controller
 aras_visual_servo_gazebo
 
 ---------------
-### How to run the code:
+# How to run the code:
 
 ```bash
 roslaunch aras_visual_servo_gazebo aras_visual_servo_gazebo.launch
