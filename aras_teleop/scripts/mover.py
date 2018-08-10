@@ -5,6 +5,7 @@ import rospy
 
 from std_msgs.msg import Float64
 
+
 KEY_UP = 65
 KEY_DOWN = 66
 KEY_RIGHT = 67
@@ -23,7 +24,7 @@ keyPress = 0
 
 
 if __name__ == '__main__':
-    rospy.init_node('aras_mover')
+    rospy.init_node('aras_teleop')
 
     while keyPress != USER_QUIT:
         pub1 = rospy.Publisher('/aras_visual_servo/joint2_position_controller/command', Float64, queue_size=1)
@@ -39,9 +40,9 @@ if __name__ == '__main__':
         elif (keyPress == KEY_DOWN) and (forward >= MIN_FORWARD):
             forward -= 0.05
         elif (keyPress == KEY_LEFT) and (left <= MAX_LEFT):
-            left += 0.15
+            left += 0.05
         elif (keyPress == KEY_RIGHT) and (left >= MIN_LEFT):
-            left -= 0.15
+            left -= 0.05
 
         _gantry.data = left
         _joint1.data = forward
