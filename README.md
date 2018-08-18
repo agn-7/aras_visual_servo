@@ -19,8 +19,25 @@ The main packages are:
 
  - aras_teleop
 
+
+INSTALL
 ---------------
-How to run the project:
+
+Clone this project on src folder in your ROS-Workspace (~/catkin_ws/src/) then do make in workspace:
+```bash
+:~/catkin_ws/src$ git clone https://github.com/agn-7/aras_visual_servo.git
+:~/catkin_ws$ catkin_make
+```
+
+Install Dependencies:
+```bash
+sudo apt-get install ros-<distro>-joint-state-controller
+sudo apt-get install ros-<distro>-effort-controllers
+sudo apt-get install ros-<distro>-position-controllers
+sudo apt-get install ros-<distro>-gazebo-ros-control
+```
+
+RUN:
 ---------------
 
 ```bash
@@ -43,7 +60,7 @@ Javad Ramezanzadeh <br>
 Parisa Masnadi <br>
 Ebrahim Abedloo <br>
 Hamid D Taghirad (supervisor) <br>
-Benyamin Jafari (Forked this repo)
+Benyamin Jafari (Forked this repo) <br>
 
 
 
