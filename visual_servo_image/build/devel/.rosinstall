@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/parisa/catkin_ws/src/aras_visual_servo/visual_srevo_image/build/devel/setup.sh

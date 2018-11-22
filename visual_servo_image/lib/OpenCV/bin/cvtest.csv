@@ -1,0 +1,7 @@
+Engine: CxTest 0.1
+Execution Date & Time: 06/28/09 18:41:04
+Config File: (null)
+Tested Libraries: cxcore: 1.1.0, cv: 1.1.0
+Optimized Low-level Plugin's: 
+=================================================
+funcName,dataType,channels,size,param0,param1,param2,param3,param4,CPE,Time(uSecs)

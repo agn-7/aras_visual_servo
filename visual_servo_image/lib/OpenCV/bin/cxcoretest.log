@@ -1,0 +1,40 @@
+Engine: CxTest 0.1
+Execution Date & Time: 06/28/09 18:41:08
+Config File: (null)
+Tested Libraries: cxcore: 1.1.0
+Optimized Low-level Plugin's: 
+=================================================
+-------------------------------------------------
+ds-graphscan: New search tree
+Vertex: 0
+Tree Edge: (0,1)
+Vertex: 1
+Tree Edge: (1,2)
+Vertex: 2
+Tree Edge: (2,3)
+Vertex: 3
+Back Edge: (3,1)
+Backtracking: 2
+Backtracking: 1
+Tree Edge: (1,4)
+Vertex: 4
+Cross Edge: (4,3)
+Backtracking: 1
+Backtracking: 0
+Forward Edge: (0,4)
+New search tree
+Vertex: 5
+Tree Edge: (5,6)
+Vertex: 6
+Cross Edge: (6,4)
+Cross Edge: (6,0)
+Backtracking: 5
+Tree Edge: (5,7)
+Vertex: 7
+Cross Edge: (7,6)
+Back Edge: (7,5)
+Backtracking: 5
+End of procedure
+=================================================
+Summary: 0 out of 69 tests failed
+Running time: 00:03:27
