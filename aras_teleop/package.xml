@@ -4,8 +4,8 @@
   <version>0.2.6</version>
   <description>A text-based interface to send a robot movement commands</description>
 
-  <maintainer email="bence.magyar.robotics@gmail.com">Bence Magyar</maintainer>
-  <author email="siegfried.gevatter@pal-robotics.com">Siegfried-A. Gevatter Pujals</author>
+  <maintainer email="bence.magyar.robotics@gmail.com">Benyamin Jafari</maintainer>
+  <author email="siegfried.gevatter@pal-robotics.com">Siegfried-A. Gevatter Pujals, Benyamin Jafari</author>
 
   <license>BSD</license>
 
