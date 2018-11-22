@@ -10,9 +10,9 @@
 #include <iostream>
 #include <termios.h>
 #include <math.h>
-#include "Cam_Sensor.h"
-#include "Controller.h"
-#include "Robot.h"
+#include "visual_servo_image/Cam_Sensor.h"
+#include "visual_servo_image/Controller.h"
+#include "visual_servo_image/Robot.h"
 
 using namespace std;
 using namespace cv;

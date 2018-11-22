@@ -1,8 +1,4 @@
-#include "Cam_Sensor.h"
-
-
-
-
+#include "visual_servo_image/Cam_Sensor.h"
 
 
 CamSensorManager::CamSensorManager()
