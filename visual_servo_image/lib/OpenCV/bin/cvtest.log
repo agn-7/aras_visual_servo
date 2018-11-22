@@ -1,9 +1,0 @@
-Engine: CxTest 0.1
-Execution Date & Time: 06/28/09 18:41:04
-Config File: (null)
-Tested Libraries: cxcore: 1.1.0, cv: 1.1.0
-Optimized Low-level Plugin's: 
-=================================================
-=================================================
-Summary: 0 out of 78 tests failed
-Running time: 00:03:51

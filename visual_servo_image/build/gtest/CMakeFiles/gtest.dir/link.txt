@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -O2 -g -DNDEBUG   -shared -Wl,-soname,libgtest.so -o /home/parisa/catkin_ws/src/aras_visual_servo/visual_srevo_image/lib/libgtest.so CMakeFiles/gtest.dir/src/gtest-all.cc.o  -L/home/parisa/catkin_ws/src/aras_visual_servo/visual_srevo_image/build/gtest/src -lpthread -Wl,-rpath,/home/parisa/catkin_ws/src/aras_visual_servo/visual_srevo_image/build/gtest/src 
