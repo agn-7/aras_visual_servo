@@ -466,7 +466,44 @@
       velocity="5" />
  </joint>
  <link name="planar_object">
-      
+  <inertial>
+      <origin
+        xyz="6.7949E-06 2.6973E-17 0.0076492"
+        rpy="0 0 0" />
+      <mass
+        value="0.3641" />
+      <inertia
+        ixx="0.00031783"
+        ixy="-3.1885E-20"
+        ixz="-2.882E-08"
+        iyy="0.0003178"
+        iyz="2.216E-20"
+        izz="0.00043046" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="-0.02 0 0.03"
+        rpy="0 1.57 0" />
+      <geometry>
+        <mesh
+          filename="package://aras_visual_servo_gazebo/meshes/Part1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://aras_visual_servo_gazebo/meshes/link6.STL" />
+      </geometry>
+    </collision>
+    <!--   
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -486,10 +523,10 @@
       <geometry>
         <box size="0.05 0.001 0.05" />
       </geometry>
-    </collision>
+    </collision> -->
   </link>
   
-  <link name="planar_object_2">
+  <!-- <link name="planar_object_2">
     <inertial>
       <origin xyz="0 0 0" /> 
       <mass value="1.0" />
@@ -510,7 +547,7 @@
         <box size="0.025 0.0005 0.025" />
       </geometry>
     </collision>
-  </link>
+  </link> -->
 
   <gazebo reference="planar_object">
     <material>Gazebo/Black</material>
@@ -541,7 +578,7 @@
       effort="30"
       velocity="20" />
   </joint>
-  <joint
+<!--   <joint
     name="J02"
     type="fixed">
     <origin
@@ -561,7 +598,7 @@
       upper="1.5"
       effort="30"
       velocity="20" />
-  </joint>
+  </joint> -->
   <!-- Camera -->
   <joint name="camera_joint" type="fixed">
     <axis xyz="0 0 0" />
@@ -714,12 +751,13 @@
     <sensor type="camera" name="camera1">
       <update_rate>30.0</update_rate>
       <camera name="head">
-        <horizontal_fov>2</horizontal_fov>
+        <horizontal_fov>1.41</horizontal_fov>
         <image>
           <width>320</width>
           <height>240</height>
           <format>R8G8B8</format>
         </image>
+       
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
@@ -728,9 +766,16 @@
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
-        <hackBaseline>0.07</hackBaseline>
-        <distortionK1>0.0</distortionK1>
-        <distortionK2>0.0</distortionK2>
+        <hackBaseline>0</hackBaseline>
+      <CxPrime>162.4058</CxPrime>
+      <Cx>162.4058</Cx>
+      <Cy>127.1973</Cy>
+      <!-- image_width / (2*tan(hfov_radian /2)) -->
+      <!-- 320 for wide and 772.55 format narrow stereo camera -->
+      <focal_length>195.05</focal_length>
+        <hackBaseline>0.0</hackBaseline>
+        <distortionK1>-0.33060</distortionK1>
+        <distortionK2>0.1170</distortionK2>
         <distortionK3>0.0</distortionK3>
         <distortionT1>0.0</distortionT1>
         <distortionT2>0.0</distortionT2>

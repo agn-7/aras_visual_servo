@@ -1,0 +1,6 @@
+<launch>
+<node name="aras_visual_servo_camera" pkg="aras_visual_servo_camera" type="aras_visual_servo_camera_node"
+respawn="false" output="screen"></node>
+<node name="aras_visual_servo_controller" pkg="aras_visual_servo_controller" type="aras_visual_servo_controller_node"
+respawn="false" output="screen"></node>
+</launch>

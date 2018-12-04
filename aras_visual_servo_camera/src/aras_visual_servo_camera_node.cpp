@@ -1,6 +1,6 @@
 #include <aras_visual_servo_camera/aras_visual_servo_camera.h>
 #include <ros/ros.h>
-
+using namespace std;
 int main(int argc, char *argv[])
 {
     ros::init(argc,argv,"aras_visual_servo_camera");

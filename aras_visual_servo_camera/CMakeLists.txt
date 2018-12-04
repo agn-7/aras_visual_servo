@@ -103,7 +103,7 @@ include_directories(
 
 ## Declare a cpp library
 add_library(${PROJECT_NAME} src/aras_visual_servo_camera.cpp)
-
+set (CMAKE_BUILD_TYPE Debug)
 add_executable(aras_visual_servo_camera_node src/aras_visual_servo_camera_node.cpp src/aras_visual_servo_camera.cpp)
 
 ## Declare a cpp executable

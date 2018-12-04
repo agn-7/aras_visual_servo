@@ -110,7 +110,7 @@ include_directories(
 
 ## Declare a cpp executable
 add_library(${PROJECT_NAME} src/aras_visual_servo_controller.cpp)
-
+set (CMAKE_BUILD_TYPE Debug)
 add_executable(aras_visual_servo_controller_node src/aras_visual_servo_controller_node.cpp src/aras_visual_servo_controller.cpp)
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes

@@ -6,6 +6,7 @@
 #include <strstream>
 #include <sstream>
 #include <exception>
+#include <iostream>
 
 #include "image_transport/subscriber.h"
 #include "sensor_msgs/Image.h"
@@ -15,6 +16,7 @@
 #include "opencv2/imgproc/imgproc.hpp"
 #include <sensor_msgs/image_encodings.h>
 #include <std_msgs/Float64MultiArray.h>
+#include <math.h>
 
 
 #define MAX_BINARY_VALUE 255.0
@@ -35,6 +37,7 @@ class VisualServoCamera
 public:
     VisualServoCamera();
     ~VisualServoCamera();
+    bool Flag_Target_Position = true;
 private:
 
 
@@ -50,9 +53,10 @@ private:
     ros::Publisher camera_data_pub_;
 
     // Kernel gets image and computes kesi, Ger and Jacobian
-    bool calculateKernel(const cv::Mat *image,float kernel[KERNEL_SIZE],cv::Mat &jacobian_mat , cv::Mat &jacobian_inverse_mat);
-    void publishCameraData(const float kernel[], const cv::Mat jacobian_inverse_mat);
-
+    bool calculateKernel(const cv::Mat *image,float kernel[KERNEL_SIZE]);
+    void publishCameraData(const float kernel[]);
+    float m00_star;
+    float tan_star;
 
 
 
