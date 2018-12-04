@@ -41,10 +41,8 @@ RUN:
 ---------------
 
 ```bash
-roslaunch aras_visual_servo_gazebo aras_visual_servo_gazebo.launch
-roslaunch aras_visual_servo_gazebo aras_visual_servo_controller.launch
-rosrun aras_visual_servo_camera aras_visual_servo_camera_node
-rosrun aras_visual_servo_controller aras_visual_servo_controller_node
+roslaunch aras_visual_servo_gazebo aras_visual_servo.launch
+roslaunch aras_visual_servo_gazebo aras_visual_servo_nodes.launch
 ```
 ### For moving the arm with arrow keys run the following line:
 
