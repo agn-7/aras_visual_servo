@@ -64,6 +64,7 @@ void VisualServoController::setTargetPositions(float target_positions[JOINTS_NUM
     std::string path1 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/error_s.m");
     std::string path2 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/velocity.m");
     std::string path3 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/cartesian.m");
+    ROS_INFO_STREAM(path1);
 
     fp_es = fopen(path1.c_str(), "w");
     fprintf(fp_es,"Error_s = [   %%Error_S\n");
@@ -73,6 +74,8 @@ void VisualServoController::setTargetPositions(float target_positions[JOINTS_NUM
 
     fp_cartesian = fopen(path3.c_str(), "w");
     fprintf(fp_cartesian,"Cartesian = [   %%Cartesian trajectory\n");
+
+    ROS_INFO("End Task.");
 
 }
 
