@@ -31,10 +31,10 @@ Clone this project on src folder in your ROS-Workspace (~/catkin_ws/src/) then d
 
 Install Dependencies:
 ```bash
-sudo apt-get install <ros-distro>-joint-state-controller
-sudo apt-get install <ros-distro>-effort-controllers
-sudo apt-get install <ros-distro>-position-controllers
-sudo apt-get install <ros-distro>-gazebo-ros-control
+sudo apt-get install ros-<ros-distro>-joint-state-controller
+sudo apt-get install ros-<ros-distro>-effort-controllers
+sudo apt-get install ros-<ros-distro>-position-controllers
+sudo apt-get install ros-<ros-distro>-gazebo-ros-control
 ```
 
 RUN:
