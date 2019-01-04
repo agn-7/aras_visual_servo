@@ -63,14 +63,26 @@ void ControllerManager::ControllerInitialize()
 	CV_MAT_ELEM(*(C),float,3,0) = 1;		// C in Theta Orientation
 	InnerLoopDuration = (float)(0.001);
 
-    fp_s = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/s.m","w");
+    const char *homedir;
+
+    if ((homedir = getenv("HOME")) == NULL) {
+        homedir = getpwuid(getuid())->pw_dir;
+    }
+
+    //aGn_packages
+    std::string path1 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/s.m");
+    std::string path2 = (std::string(homedir) + "catkin_ws/src/aras_visual_servo/Results/velocity.m");
+    std::string path3 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/error_s.m");
+    std::string path4 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/joints.m");
+
+    fp_s = fopen(path1.c_str(), "w");
     fprintf(fp_s,"S = [   %%S_MOMENT\n");
 
     //fprintf(fp_s,"S = [   %%Sliding Surface\n");
     //fp_sums = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/sum_s.m","w");
     //fprintf(fp_sums,"Sum_s = [   %%integral of Kesi\n");
 
-    fp_v = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/velocity.m","w");
+    fp_v = fopen(path2.c_str(), "w");
 	fprintf(fp_v,"Velocity = [   %%Cartesian Velocity\n");
 
     //fp_kesi = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/kesi.m","w");
@@ -78,11 +90,11 @@ void ControllerManager::ControllerInitialize()
     //fp_ekesi = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/errorofkesi.m","w");
     //fprintf(fp_ekesi,"Errorofkesi = [   %%Error of Kesi\n");
 
-    fp_es = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/error_s.m","w");
+    fp_es = fopen(path3.c_str(), "w");
     fprintf(fp_es,"Error_S = [   %%Error_S\n");
 
 
-    fp_joints = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/joints.m","w");
+    fp_joints = fopen(path4.c_str(), "w");
 	fprintf(fp_joints,"Joint = [   %%Joints value\n");
 
     //fp_jacobians = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/jacobians.m","w");

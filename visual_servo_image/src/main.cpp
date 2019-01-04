@@ -99,7 +99,18 @@ int main(int argc, char **argv)
   ROBOT.nh = nh;
   ROBOT.StartRobot();
 
-  fp_Current_Joint = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/PID_Test.m","w");
+  const char *homedir;
+
+  if ((homedir = getenv("HOME")) == NULL) {
+      homedir = getpwuid(getuid())->pw_dir;
+  }
+
+  //aGn_packages
+  std::string path1 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/PID_Test.m");
+  std::string path2 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/Target_Image.jpg");
+  std::string path3 = (std::string(homedir) + "catkin_ws/src/aras_visual_servo/Results/Final_Image.jpg");
+
+  fp_Current_Joint = fopen(path1.c_str(), "w");
   fprintf(fp_Current_Joint,"Joint = [   %%Joints value\n %%J1 J2 J3 J4 J5 J6 Gantry\n");
 
   // Get address of obtained image to CAMERA object
@@ -149,7 +160,7 @@ int main(int argc, char **argv)
   boost::this_thread::sleep( boost::posix_time::milliseconds(2000));
 
   char *Path = new char[100];
-  sprintf(Path, "/home/parisa/catkin_ws/src/aras_visual_servo/Results/Target_Image.jpg");
+  sprintf(Path, path2.c_str());
   cvSaveImage(Path ,CAMERA.Thresholded_Image);
 
   // Set initialize Position for robot
@@ -176,7 +187,7 @@ int main(int argc, char **argv)
       ros::spinOnce();
   }
   char *Path2 = new char[100];
-  sprintf(Path2, "/home/parisa/catkin_ws/src/aras_visual_servo/Results/Initial_Image.jpg");
+  sprintf(Path2, path2.c_str());
       cvSaveImage(Path2 ,CAMERA.Thresholded_Image);
   fprintf(fp_Current_Joint,"];\n");
   //fclose(fp_Current_Joint);
@@ -222,7 +233,7 @@ int main(int argc, char **argv)
                  (abs(Gantry_Pos - ROBOT.Gantry_Target) > Precision));
       }
       char *Path3 = new char[100];
-      sprintf(Path3, "/home/parisa/catkin_ws/src/aras_visual_servo/Results/Final_Image.jpg");
+      sprintf(Path3, path3.c_str());
       cvSaveImage(Path3 ,CAMERA.Thresholded_Image);
       CONTROLLER.Terminate();
       cout << "End Of Visual Servoing."<< endl;

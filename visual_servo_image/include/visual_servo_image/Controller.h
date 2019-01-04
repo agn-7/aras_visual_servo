@@ -15,6 +15,9 @@
 #include <math.h>
 #include <stdio.h>
 #include <cxcore.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
 //#include <cxtypes.h>
 #include <string.h>
 #include <stdlib.h>
