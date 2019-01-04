@@ -37,9 +37,15 @@ add_executable(${PROJECT_NAME} src/main.cpp src/Cam_Sensor.cpp src/Robot.cpp src
 # add_library(${PROJECT_NAME} ${${PROJECT_NAME}_SRCS})
 
 target_link_libraries(${PROJECT_NAME}
-  ${catkin_LIBRARIES}
+  ${catkin_LIBRARIES} 
+  #${OpenCV_LIBS} 
 )
 
 
 
+
+
+#find_package( OpenCV REQUIRED )
+#add_executable( DisplayImage DisplayImage.cpp )
+#target_link_libraries( DisplayImage ${OpenCV_LIBS} )
 
