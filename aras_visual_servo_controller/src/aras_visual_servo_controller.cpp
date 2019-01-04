@@ -51,13 +51,27 @@ void VisualServoController::setTargetPositions(float target_positions[JOINTS_NUM
         ROS_INFO("kernel target %d = %lf" ,i, kernel_[i]);
     }
 
-    fp_es = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/error_s.m","w");
+    const char *homedir;
+
+    if ((homedir = getenv("HOME")) == NULL) {
+        homedir = getpwuid(getuid())->pw_dir;
+        ROS_INFO(homedir);
+    }
+    else{
+        ROS_INFO(homedir);
+    }
+
+    std::string path1 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/error_s.m");
+    std::string path2 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/velocity.m");
+    std::string path3 = (std::string(homedir) + "/catkin_ws/src/aras_visual_servo/Results/cartesian.m");
+
+    fp_es = fopen(path1.c_str(), "w");
     fprintf(fp_es,"Error_s = [   %%Error_S\n");
 
-    fp_v = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/velocity.m","w");
+    fp_v = fopen(path2.c_str(), "w");
     fprintf(fp_v,"Velocity = [   %%Cartesian Velocity\n");
 
-    fp_cartesian = fopen("/home/parisa/catkin_ws/src/aras_visual_servo/Results/cartesian.m","w");
+    fp_cartesian = fopen(path3.c_str(), "w");
     fprintf(fp_cartesian,"Cartesian = [   %%Cartesian trajectory\n");
 
 }

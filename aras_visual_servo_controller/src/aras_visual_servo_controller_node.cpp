@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
                                               visual_servo_controller->Target_z,
                                               visual_servo_controller->Target_yaw);
     visual_servo_controller->z_star = 0.91 - visual_servo_controller->Target_z;
-    cout<<"z_star= "<<visual_servo_controller->z_star<<endl;    
+    cout<<"z_star= "<<visual_servo_controller->z_star<<"test"<<endl;
     visual_servo_controller->setTargetPositions(joint_positions);
     //visual_servo_camera->Flag_Target_Position = false;
     joint_positions[0]=-0.1;//0.1;

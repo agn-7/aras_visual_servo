@@ -5,6 +5,10 @@
 #include <exception>
 #include <boost/thread.hpp>
 #include <sensor_msgs/JointState.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pwd.h>
+//#include <string>
 
 #include "image_transport/subscriber.h"
 #include "sensor_msgs/Image.h"
