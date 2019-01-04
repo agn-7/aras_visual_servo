@@ -38,7 +38,7 @@ add_executable(${PROJECT_NAME} src/main.cpp src/Cam_Sensor.cpp src/Robot.cpp src
 
 target_link_libraries(${PROJECT_NAME}
   ${catkin_LIBRARIES} 
-  #${OpenCV_LIBS} 
+  ${OpenCV_LIBS} 
 )
 
 
